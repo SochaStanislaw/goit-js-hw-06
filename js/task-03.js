@@ -25,6 +25,9 @@ const images = [
 const list = document.querySelector("ul");
 
 const item = images
-  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"/></li>`)
+  .map(
+    (image) =>
+      `<li class="list"><img class="img" src="${image.url}" alt="${image.alt}"/></li>`
+  )
   .join("");
 list.insertAdjacentHTML("afterbegin", item);
