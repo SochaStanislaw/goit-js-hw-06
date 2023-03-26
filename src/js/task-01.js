@@ -18,7 +18,7 @@ console.log("Number of categories: ", allCategories.length);
 // i liczbę elementów w danej kategorii (wszystkich w jej obrębie <li>).
 
 const categories = document.querySelectorAll(".item");
-for (category of categories) {
+for (const category of categories) {
   console.log(`Category: ${category.children[0].textContent}`);
   console.log(`Elements: ${category.children[1].children.length}`);
 }
