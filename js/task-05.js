@@ -8,12 +8,10 @@
 let textInput = document.querySelector("input");
 let greeting = document.getElementById("name-output");
 
-// Pierwszy sposób
-// textInput.addEventListener("input", (event) => {
-//   greeting.textContent = event.currentTarget.value;
-// });
-
-// Drugi sposób
 textInput.addEventListener("input", function (name) {
-  greeting.textContent = name.target.value;
+  if (name.target.value === "") {
+    greeting.textContent = "Anonymous";
+  } else {
+    greeting.textContent = name.target.value;
+  }
 });

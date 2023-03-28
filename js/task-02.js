@@ -4,8 +4,6 @@
 // 3. Doda do elementu klasę item.
 // 4. Następnie jedna operacja umieści wszystkie <li> na liście ul#ingredients.
 
-const list = document.querySelector("ul");
-
 const ingredients = [
   "Potatoes",
   "Mushrooms",
@@ -15,8 +13,21 @@ const ingredients = [
   "Condiments",
 ];
 
-const item = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
+// Pierwszy sposób:
+// const list = document.querySelector("ul");
 
-list.innerHTML = item;
+// const item = ingredients
+//   .map((ingredient) => `<li class="item">${ingredient}</li>`)
+//   .join("");
+
+// list.innerHTML = item;
+
+// Drugi sposób z użyciem .createElement:
+const list = document.getElementById("ingredients");
+
+for (let i = 0; i < ingredients.length; i += 1) {
+  const item = document.createElement("li");
+  item.classList.add("item");
+  item.textContent = ingredients[i];
+  list.append(item);
+}
