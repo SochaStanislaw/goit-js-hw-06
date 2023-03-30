@@ -15,19 +15,31 @@ const ingredients = [
 
 // Pierwszy sposób:
 // const list = document.querySelector("ul");
-
 // const item = ingredients
 //   .map((ingredient) => `<li class="item">${ingredient}</li>`)
 //   .join("");
-
 // list.innerHTML = item;
 
 // Drugi sposób z użyciem .createElement:
-const list = document.getElementById("ingredients");
 
-for (let i = 0; i < ingredients.length; i += 1) {
+// const list = document.getElementById("ingredients");
+// for (let i = 0; i < ingredients.length; i += 1) {
+//   const item = document.createElement("li");
+//   item.classList.add("item");
+//   item.textContent = ingredients[i];
+//   list.append(item);
+// }
+
+// Trzeci sposób:
+
+let list = document.getElementById("ingredients");
+const frag = document.createDocumentFragment();
+
+ingredients.forEach((ingredient) => {
   const item = document.createElement("li");
   item.classList.add("item");
-  item.textContent = ingredients[i];
-  list.append(item);
-}
+  item.textContent = ingredient;
+  frag.append(item);
+});
+
+list.append(frag);
