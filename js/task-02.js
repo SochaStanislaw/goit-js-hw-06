@@ -21,7 +21,6 @@ const ingredients = [
 // list.innerHTML = item;
 
 // Drugi sposób z użyciem .createElement:
-
 // const list = document.getElementById("ingredients");
 // for (let i = 0; i < ingredients.length; i += 1) {
 //   const item = document.createElement("li");
@@ -31,7 +30,6 @@ const ingredients = [
 // }
 
 // Trzeci sposób:
-
 let list = document.getElementById("ingredients");
 const frag = document.createDocumentFragment();
 
