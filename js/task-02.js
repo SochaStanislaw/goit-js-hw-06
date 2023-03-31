@@ -30,14 +30,26 @@ const ingredients = [
 // }
 
 // Trzeci sposób:
+// let list = document.getElementById("ingredients");
+// const frag = document.createDocumentFragment();
+
+// ingredients.forEach((ingredient) => {
+//   const item = document.createElement("li");
+//   item.classList.add("item");
+//   item.textContent = ingredient;
+//   frag.append(item);
+// });
+// list.append(frag);
+
+// Czwarty sposób:
 let list = document.getElementById("ingredients");
-const frag = document.createDocumentFragment();
+const arr = [];
 
 ingredients.forEach((ingredient) => {
   const item = document.createElement("li");
   item.classList.add("item");
   item.textContent = ingredient;
-  frag.append(item);
+  arr.push(item);
 });
 
-list.append(frag);
+list.append(...arr);
